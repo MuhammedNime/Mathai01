@@ -1,0 +1,223 @@
+/* ==================== MATH KEYBOARD & CALCULATOR MODULE ==================== */
+
+body .ML__keyboard {
+    z-index: var(--z-keyboard) !important;
+    position: fixed !important;
+}
+
+.math-input:focus-within,
+math-field:focus-within {
+    z-index: 2;
+    position: relative;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* --- Inline & Block Math Expressions --- */
+.math-expression {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    background: var(--math-bg);
+    border: 1.5px solid var(--math-border);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    margin: 2px 5px;
+    cursor: pointer;
+    direction: ltr;
+    unicode-bidi: isolate;
+    box-shadow: var(--math-shadow);
+    user-select: all;
+    -webkit-user-select: all;
+    caret-color: var(--primary-color);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.math-expression:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary-color);
+}
+
+.editor-area .math-expression:hover {
+    box-shadow: 0 0 0 1.5px var(--primary-color);
+}
+
+.math-expression .katex {
+    color: var(--text-color);
+    font-size: 1.12em;
+}
+
+.katex-block-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 12px;
+    direction: ltr;
+    unicode-bidi: isolate;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+/* --- Charts --- */
+.chart-container {
+    width: 100%;
+    height: 320px;
+    background: var(--bg-input-area);
+    border: 1.5px solid var(--modal-border);
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: var(--radius-md);
+    position: relative;
+    box-shadow: 0 4px 14px var(--shadow);
+    overflow: hidden;
+}
+
+/* --- Scientific Calculator Modal --- */
+#calculatorModal .modal-content {
+    width: min(92vw, 430px);
+    max-width: 430px;
+    max-height: min(92dvh, 720px);
+}
+
+#calculatorModal .modal-header {
+    direction: inherit;
+}
+
+#calculatorModal .modal-body {
+    direction: ltr;
+    padding: 14px;
+}
+
+@media (max-width: 768px) {
+    #calculatorModal .modal-content {
+        width: 100vw;
+        max-width: 100vw;
+        height: var(--app-vph, 100dvh);
+        max-height: var(--app-vph, 100dvh);
+        border-radius: 0;
+    }
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.calc-display {
+    grid-column: 1 / -1;
+    background: var(--bg-body);
+    color: var(--text-color);
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    text-align: left;
+    margin-bottom: 6px;
+    border: 1.5px solid var(--modal-border);
+    min-height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+}
+
+body.light-mode .calc-display {
+    background: var(--bg-input-area);
+}
+
+.calc-history {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    min-height: 20px;
+    direction: ltr;
+    text-align: left;
+    overflow-x: auto;
+}
+
+.calc-screen {
+    font-size: 1.85rem;
+    font-weight: 700;
+    word-break: break-all;
+    direction: ltr;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.calc-btn {
+    height: 44px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    font-family: 'IBM Plex Mono', 'Cairo', sans-serif;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--modal-border);
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.calc-btn:hover {
+    border-color: var(--primary-color);
+}
+
+.calc-btn:active {
+    transform: scale(0.96);
+}
+
+.num-btn {
+    background: var(--bg-input);
+    color: var(--text-color);
+}
+
+body.light-mode .num-btn {
+    background: var(--bg-container);
+}
+
+.op-btn {
+    background: rgba(59, 130, 246, 0.16);
+    color: #93c5fd;
+    border-color: rgba(59, 130, 246, 0.35);
+    font-size: 1.2rem;
+}
+
+body.light-mode .op-btn {
+    background: var(--bg-info);
+    color: var(--primary-color);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+.func-btn {
+    background: rgba(30, 41, 59, 0.72);
+    color: #cbd5e1;
+    font-size: 0.82rem;
+}
+
+body.light-mode .func-btn {
+    background: var(--bg-input-area);
+    color: var(--text-secondary);
+}
+
+.clear-btn {
+    background: rgba(239, 68, 68, 0.18);
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.34);
+}
+
+body.light-mode .clear-btn {
+    background: rgba(220, 38, 38, 0.12);
+    color: var(--delete-bg);
+    border-color: rgba(220, 38, 38, 0.3);
+}
+
+.equal-btn {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+    font-size: 1.25rem;
+}
+
+.plot-btn {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    font-size: 0.78rem;
+}

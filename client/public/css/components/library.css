@@ -1,0 +1,165 @@
+/* ==================== LIBRARY SEARCH, CONTROLS & CALLOUTS ==================== */
+.library-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 8px 10px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--modal-border);
+}
+
+.library-search-wrap {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.library-search-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 11px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--modal-border);
+  background: var(--bg-input);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 12.5px;
+  text-align: start;
+}
+
+.library-search-input::placeholder {
+  color: var(--placeholder);
+}
+
+.library-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--focus-ring);
+}
+
+.library-search-results {
+  max-height: 250px;
+  overflow-y: auto;
+  display: none;
+}
+
+.library-search-results.has-results {
+  display: block;
+}
+
+.library-tree-wrap.is-hidden {
+  display: none;
+}
+
+.library-empty-state {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.search-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--modal-border);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: var(--bg-hover);
+}
+
+.search-result-link {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.search-result-link .meta {
+  color: var(--text-secondary);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.search-result-link .excerpt {
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  margin-top: 4px;
+}
+
+.library-fav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--modal-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.16s ease, color 0.16s ease, background-color 0.16s ease;
+}
+
+.library-fav-btn:hover,
+.library-fav-btn.active {
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.55);
+  background: rgba(245, 158, 11, 0.14);
+}
+
+.library-fav-btn.active svg {
+  fill: currentColor;
+}
+
+.library-openall-btn {
+  padding: 0 10px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--modal-border);
+  background: var(--bg-card);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.16s ease, color 0.16s ease, background-color 0.16s ease;
+}
+
+.library-openall-btn:hover,
+.library-openall-btn.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background: var(--bg-selected);
+}
+
+.lesson-note-box {
+  background: var(--bg-info);
+  border: 1px solid var(--math-border);
+  border-inline-start: 4px solid var(--accent-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin: 10px 0;
+  font-size: 13px;
+  color: var(--text-color);
+}

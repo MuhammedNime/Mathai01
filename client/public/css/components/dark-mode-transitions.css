@@ -1,0 +1,65 @@
+/* ==================== DARK MODE TRANSITIONS (FAST & CRISP) ==================== */
+
+:root {
+    view-transition-name: root;
+}
+
+html,
+body {
+    transition: background-color 0.22s ease, color 0.22s ease;
+}
+
+.chat-header,
+.chat-messages,
+.chat-input-area,
+.sidebar-nav,
+.modal-content,
+.message-bubble,
+.text-input-wrapper,
+.bottom-nav-menu,
+.dropdown-content,
+.chat-options-dropdown {
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+button,
+input,
+select,
+textarea {
+    transition: background-color 0.18s ease,
+                color 0.18s ease,
+                border-color 0.18s ease,
+                box-shadow 0.18s ease,
+                transform 0.15s ease;
+}
+
+body.theme-switching {
+    animation: darkModeSwitch 0.24s ease-out;
+}
+
+@keyframes darkModeSwitch {
+    0% { opacity: 0.96; }
+    100% { opacity: 1; }
+}
+
+.icon-btn#darkModeToggle {
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-btn#darkModeToggle:hover {
+    box-shadow: 0 0 14px rgba(59, 130, 246, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

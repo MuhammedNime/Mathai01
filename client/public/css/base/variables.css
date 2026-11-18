@@ -1,0 +1,151 @@
+/* ==================== 1. UNIFIED DESIGN SYSTEM: DARK NAVY + MODERN BLUE & TURQUOISE ==================== */
+:root,
+.dark-mode {
+    /* Primary Brand Palette: Modern Blue + Turquoise Accents */
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --accent-color: #14b8a6;
+    --accent-hover: #0d9488;
+    --accent-secondary: #06b6d4;
+    --primary-gradient: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+    --primary-soft-gradient: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(20, 184, 166, 0.18) 100%);
+
+    /* Dark Navy Background Hierarchy */
+    --bg-body: #070d19;
+    --bg-container: #0c1628;
+    --bg-panel: #111d33;
+    --bg-card: #15233d;
+    --bg-messages: #091222;
+    --bg-input-area: #111d33;
+    --bg-input: #172744;
+    --bg-hover: #1b2d4f;
+    --bg-info: rgba(20, 184, 166, 0.12);
+    --bg-selected: rgba(59, 130, 246, 0.22);
+
+    /* Semantic Surface Aliases */
+    --surface-1: var(--bg-container);
+    --surface-2: var(--bg-panel);
+    --surface-3: var(--bg-card);
+
+    /* Message Bubbles */
+    --bg-outgoing: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    --bg-incoming: #13213a;
+    --bubble-shadow: 0 4px 14px rgba(2, 6, 23, 0.32);
+
+    /* Crisp Typography & High Contrast Colors */
+    --text-color: #f8fafc;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-on-primary: #ffffff;
+    --text-on-sent: #ffffff;
+    --placeholder: #64748b;
+
+    /* Math Pill & Equation Theme */
+    --math-bg: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(20, 184, 166, 0.16) 100%);
+    --math-border: rgba(20, 184, 166, 0.45);
+    --math-shadow: 0 2px 10px rgba(2, 6, 23, 0.35);
+
+    /* UI Chrome, Borders & Status */
+    --modal-bg: #0e192d;
+    --modal-border: #223453;
+    --border-color: var(--modal-border);
+    --border-strong: #334a73;
+    --focus-ring: rgba(59, 130, 246, 0.28);
+    --delete-bg: #ef4444;
+    --success-bg: #14b8a6;
+    --warning-bg: #f59e0b;
+    --secondary-bg: #334155;
+    --shadow: rgba(2, 6, 23, 0.48);
+    --shadow-lg: rgba(37, 99, 235, 0.26);
+
+    /* Font Stacks */
+    --font-sans: 'Cairo', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Cairo', monospace;
+
+    /* Unified Typography Scale */
+    --text-xs: 11.5px;
+    --text-sm: 13px;
+    --text-base: 14.5px;
+    --text-md: 15.5px;
+    --text-lg: 17px;
+    --text-xl: 20px;
+
+    /* Unified Radius Scale */
+    --radius-xs: 6px;
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    /* Unified Control Heights */
+    --control-h-sm: 36px;
+    --control-h-md: 42px;
+    --control-h-lg: 46px;
+
+    /* Layout & Dynamic Viewport */
+    --app-vph: 100dvh;
+    --app-gutter: clamp(12px, 3vw, 28px);
+    --app-max-width: 1520px;
+    --bubble-max-width: 760px;
+
+    /* Layering Scale */
+    --z-back: -1;
+    --z-normal: 1;
+    --z-header: 100;
+    --z-input-area: 100;
+    --z-bottom-nav: 400;
+    --z-sidebar: 500;
+    --z-overlay: 900;
+    --z-modal: 99990;
+    --z-dialog: 100000;
+    --z-keyboard: 100020;
+    --z-toast: 500000;
+}
+
+/* Optional Light Theme Variant (Cohesive Slate/White + Blue & Turquoise) */
+body.light-mode {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --accent-color: #0d9488;
+    --accent-hover: #0f766e;
+    --accent-secondary: #0284c7;
+    --primary-gradient: linear-gradient(135deg, #2563eb 0%, #0d9488 100%);
+    --primary-soft-gradient: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
+
+    --bg-body: #e8eef5;
+    --bg-container: #ffffff;
+    --bg-panel: #f4f7fb;
+    --bg-card: #ffffff;
+    --bg-messages: #eef3f9;
+    --bg-input-area: #f4f7fb;
+    --bg-input: #ffffff;
+    --bg-hover: #e2e8f0;
+    --bg-info: rgba(13, 148, 136, 0.1);
+    --bg-selected: rgba(37, 99, 235, 0.12);
+
+    --bg-outgoing: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --bg-incoming: #ffffff;
+    --bubble-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+
+    --text-color: #0f172a;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-on-primary: #ffffff;
+    --text-on-sent: #ffffff;
+    --placeholder: #64748b;
+
+    --math-bg: linear-gradient(135deg, #eff6ff 0%, #ecfeff 100%);
+    --math-border: rgba(37, 99, 235, 0.35);
+    --math-shadow: 0 1px 6px rgba(37, 99, 235, 0.12);
+
+    --modal-bg: #ffffff;
+    --modal-border: #cbd5e1;
+    --border-color: var(--modal-border);
+    --border-strong: #94a3b8;
+    --focus-ring: rgba(37, 99, 235, 0.22);
+    --delete-bg: #dc2626;
+    --success-bg: #0d9488;
+    --secondary-bg: #64748b;
+    --shadow: rgba(15, 23, 42, 0.1);
+    --shadow-lg: rgba(37, 99, 235, 0.18);
+}
